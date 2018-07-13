@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.uqbar.commons.utils.Observable;
@@ -13,7 +14,13 @@ public class Alumno {
 	private int legajo;
 	private List<Tarea> tareas;
 	
-	
+	public Alumno(String nombre, String apellido, String cuentaGit, int legajo) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.cuentaGit = cuentaGit;
+		this.legajo = legajo;
+		this.tareas = new ArrayList<Tarea>();
+	}
 	
 	//getter - setter
 	
