@@ -2,8 +2,6 @@ package ui.windows;
 
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Panel;
-import org.uqbar.arena.widgets.tables.Column;
-import org.uqbar.arena.widgets.tables.Table;
 import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
@@ -19,24 +17,28 @@ public class LegajoWindows extends SimpleWindow<LegajoViewModel> {
 	}
 
 	@Override
-	protected void addActions(Panel panelActions) {
-
-		new Button(panelActions).setCaption("Buscar");
-		// .onClick(this::registrarVenta);
-	}
-
-	@Override
-	protected void createFormPanel(Panel form) {
+	public void createContents(Panel form) {
 		this.setTitle("Legajo");
 
 		new Label(form).setText("Ingrese su legajo");
 		new NumericField(form).setWidth(150);
+		new Button(form).setCaption("Buscar").onClick(this::datosDelAlumno);
+		
 	}
-	//
-	// public void registrarVenta() {
-	// Dialog<?> dialog = new RegistrarVentaWindow(this);
-	// dialog.open();
-	// dialog.onAccept(() -> {});
-	// }
+	@Override
+	protected void addActions(Panel panelActions) {
+	}
+
+	@Override
+	protected void createFormPanel(Panel arg0) {
+		// TODO Auto-generated method stub
+
+	}
+	public void datosDelAlumno() {
+		Dialog<?> dialog = new DatosDelAlumnoWindow(this);
+		dialog.open();
+		dialog.onAccept(() -> {});
+	}
+	
 
 }
