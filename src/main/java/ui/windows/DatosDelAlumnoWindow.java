@@ -13,8 +13,13 @@ import ui.vm.DatosDelAlumnoViewModel;
 
 public class DatosDelAlumnoWindow extends Dialog<DatosDelAlumnoViewModel> {
 
+	public WindowOwner padre;
+	
 	public DatosDelAlumnoWindow(WindowOwner owner) {
 		super(owner, new DatosDelAlumnoViewModel());
+		padre = owner;
+		this.getModelObject().setLegajoInsertado(((LegajoWindows) padre).getModelObject().getLegajoInsertado());
+		this.getModelObject().cargarDatos();
 	}
 	
 	@Override
@@ -23,16 +28,16 @@ public class DatosDelAlumnoWindow extends Dialog<DatosDelAlumnoViewModel> {
 		form.setLayout(new ColumnLayout(2));
 		
 		new Label(form).setText("Nombre:");
-		new Label(form).setText("");
+		new Label(form).bindValueToProperty("alumno.nombre");
 		
 		new Label(form).setText("Apellido:");
-		new Label(form).setText("");
+		new Label(form).bindValueToProperty("alumno.apellido");
 		
 		new Label(form).setText("Cuenta Git:");
-		new Label(form).setText("");
+		new Label(form).bindValueToProperty("alumno.cuentaGit");
 		
 		new Label(form).setText("Legajo:");
-		new Label(form).setText("");
+		new Label(form).bindValueToProperty("alumno.legajo");
 		
 		new Button(form).setCaption("Notas");
 		new Button(form).setCaption("Modificar datos");
