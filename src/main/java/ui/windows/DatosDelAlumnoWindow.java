@@ -23,16 +23,16 @@ public class DatosDelAlumnoWindow extends Dialog<DatosDelAlumnoViewModel> {
 		form.setLayout(new ColumnLayout(2));
 		
 		new Label(form).setText("Nombre:");
-		new Label(form).setText("Osqui");
+		new Label(form).setText("");
 		
 		new Label(form).setText("Apellido:");
-		new Label(form).setText("Cubas");
+		new Label(form).setText("");
 		
 		new Label(form).setText("Cuenta Git:");
-		new Label(form).setText("of.cubas");
+		new Label(form).setText("");
 		
 		new Label(form).setText("Legajo:");
-		new Label(form).setText("1413478");
+		new Label(form).setText("");
 		
 		new Button(form).setCaption("Notas");
 		new Button(form).setCaption("Modificar datos");
