@@ -26,6 +26,11 @@ public class AlumnoRepositorio {
 	public boolean existeLegajo(int legajo) {
 		return getAlumnos().stream().anyMatch(a->a.getLegajo() == legajo);
 	}
+	
+	public Alumno getAlumno(int legajo) {
+		
+		return alumnos.stream().filter(a->a.getLegajo() == legajo).findFirst().get();
+	}
 	//getter - setter
 	
 	public List<Alumno> getAlumnos() {
