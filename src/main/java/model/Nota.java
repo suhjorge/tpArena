@@ -1,18 +1,32 @@
 package model;
 
-public enum Nota {
-	NUMERICA {
-		int nota;
-		public boolean estaAprobada(int nota) {
-			return nota>6;
+public class Nota {
+	static TipoNota tipo;
+	String nota;
+	
+	public Nota(TipoNota tipo, String nota) {
+		this.tipo = tipo;
+		this.nota = nota;
+	}
+	
+	public TipoNota getTipoNota() {
+		return tipo;
+	}
+	
+	public static boolean aprobada(String nota) {
+		if(tipo == TipoNota.NUMERICA) {
+			return Integer.parseInt(nota) >= 6;
 		}
-	},
-	CONCEPTUAL{
-		String nota;
-		public boolean estaAprobada(String nota) {
-			return nota!="M";
-		}
-	};
-
+		return nota!="M";
+	}
+	public String getNota() {
+		return nota;
+	}
+	public void setNota(String nota) {
+		this.nota = nota;
+	}
+	public void setTipo(TipoNota tipo) {
+		this.tipo = tipo;
+	}
 }
 

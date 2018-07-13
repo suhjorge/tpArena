@@ -34,8 +34,8 @@ public class Tarea {
 		this.notas = notas;
 	}
 	
-	public Nota getNotaActual() {
-		return notas.stream().reduce((primerNota, otraNota) -> otraNota);
+	public String getNotaActual() {
+		return notas.stream().reduce((primerNota, otraNota) -> otraNota).toString();
 	}
 	
 	public boolean tareaAprobada() {
