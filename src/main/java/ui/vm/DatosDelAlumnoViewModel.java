@@ -1,8 +1,11 @@
 package ui.vm;
 
+import org.uqbar.commons.utils.Observable;
+
 import model.Alumno;
 import repository.AlumnoRepositorio;
 
+@Observable
 public class DatosDelAlumnoViewModel {
 
 	public DatosDelAlumnoViewModel() {

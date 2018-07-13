@@ -25,8 +25,9 @@ public class LegajoWindows extends SimpleWindow<LegajoViewModel> {
 		campoLegajo.setWidth(150);
 		campoLegajo.bindValueToProperty("legajoInsertado");
 		new Button(form).setCaption("Buscar").onClick(this::datosDelAlumno);
-		
+
 	}
+
 	@Override
 	protected void addActions(Panel panelActions) {
 	}
@@ -36,15 +37,15 @@ public class LegajoWindows extends SimpleWindow<LegajoViewModel> {
 		// TODO Auto-generated method stub
 
 	}
+
 	public void datosDelAlumno() {
-		
-		if(this.getModelObject().existeLegajo()) {
-		Dialog<?> dialog = new DatosDelAlumnoWindow(this);
-		dialog.open();
-		dialog.onAccept(() -> {});
-	}
-		else {
-			
+
+		if (this.getModelObject().existeLegajo()) {
+			Dialog<?> dialog = new DatosDelAlumnoWindow(this);
+			dialog.open();
+			dialog.onAccept(() -> {
+			});
+		} else {
 		}
 	}
 
