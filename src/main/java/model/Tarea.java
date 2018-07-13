@@ -34,12 +34,12 @@ public class Tarea {
 		this.notas = notas;
 	}
 	
-	public Optional<Nota> getNotaActual() {
+	public Nota getNotaActual() {
 		return notas.stream().reduce((primerNota, otraNota) -> otraNota);
 	}
 	
 	public boolean tareaAprobada() {
-		return TipoNota.aprobada(this.getNotaActual());
+		return Nota.aprobada(this.getNotaActual());
 	}
 	
 }

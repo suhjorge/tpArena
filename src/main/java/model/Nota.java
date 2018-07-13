@@ -1,10 +1,18 @@
 package model;
 
-public class Nota {
-	int nota;
-	
-	public boolean aprobada(int nota) {
-		return nota > 6;
-	}
+public enum Nota {
+	NUMERICA {
+		int nota;
+		public boolean estaAprobada(int nota) {
+			return nota>6;
+		}
+	},
+	CONCEPTUAL{
+		String nota;
+		public boolean estaAprobada(String nota) {
+			return nota!="M";
+		}
+	};
 
 }
+
